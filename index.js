@@ -1,10 +1,12 @@
 const express = require('express');
 const cors = require('cors');
-
+const connectToMongo = require('./db/conn');
 const userRoutes = require('./routes/UserRoutes');
 
 const app = express();
 
+//conectando ao banco de dados
+connectToMongo();
 //configurando json response
 app.use(express.json());
 
